@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="clastechTesteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="clastechTesteEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="teste" EntityType="clastechTesteModel.teste" />
+    <EntitySet Name="pedido" EntityType="clastechTesteModel.pedido" />
+    <EntitySet Name="pedidoItem" EntityType="clastechTesteModel.pedidoItem" />
+  </EntityContainer>
+  <EntityType Name="teste">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ativo" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pedido">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="descricao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="valorTotal" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="dataPedido" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ativo" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pedidoItem">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="produtoId" Type="Int32" Nullable="false" />
+    <Property Name="nome" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="descricao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="valor" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ativo" Type="Boolean" Nullable="false" />
+  </EntityType>
+</Schema>

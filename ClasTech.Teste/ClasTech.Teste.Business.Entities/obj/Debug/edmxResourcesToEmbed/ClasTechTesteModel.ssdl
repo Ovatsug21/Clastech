@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="clastechTesteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="pedido">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="45" />
+    <Property Name="descricao" Type="varchar" MaxLength="255" />
+    <Property Name="valorTotal" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="dataPedido" Type="datetime" Nullable="false" />
+    <Property Name="ativo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pedidoItem">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="produtoId" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="descricao" Type="varchar" MaxLength="255" />
+    <Property Name="valor" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ativo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="teste">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ativo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="clastechTesteModelStoreContainer">
+    <EntitySet Name="pedido" EntityType="Self.pedido" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pedidoItem" EntityType="Self.pedidoItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="teste" EntityType="Self.teste" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

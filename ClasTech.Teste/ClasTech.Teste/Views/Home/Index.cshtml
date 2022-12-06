@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "Pedido MVC Razor";
+}
+
+<h2>Lista de Pedidos</h2>
+<p>
+    Escolha
+</p>
+
+<table class="table table-bordered table-striped table-hover">
+
+    <thead class="active">
+        <tr>
+            <th> Id Pedido</th>
+            <th> Nome </th>
+            <th> Descrição </th>
+            <th> Valor Total </th>
+            <th> Data do Pedido</th>
+            <th> Pedido Ativo </th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in ViewBag.ListaPedido)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Nome</td>
+                <td>@item.Descricao</td>
+                <td>@item.ValorTotal</td>
+                <td>@item.DataPedido</td>
+                <td>@item.Ativo</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<h2>Lista de Pedidos Item</h2>
+
+<table class="table table-bordered table-striped table-hover">
+
+    <thead class="active">
+        <tr>
+            <th> Id Pedido Item</th>
+            <th> Id do Produto</th>
+            <th> Nome </th>
+            <th> Descrição </th>
+            <th> Valor </th>
+            <th> Pedido Ativo </th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in ViewBag.ListaPedidoItem)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.ProdutoId</td>
+                <td>@item.Nome</td>
+                <td>@item.Descricao</td>
+                <td>@item.Valor</td>
+                <td>@item.Ativo</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<script>
+
+</script>

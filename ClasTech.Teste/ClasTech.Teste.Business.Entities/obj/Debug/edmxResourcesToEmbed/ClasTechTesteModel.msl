@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="clastechTesteModelStoreContainer" CdmEntityContainer="clastechTesteEntities">
+    <EntitySetMapping Name="teste">
+      <EntityTypeMapping TypeName="clastechTesteModel.teste">
+        <MappingFragment StoreEntitySet="teste">
+          <ScalarProperty Name="ativo" ColumnName="ativo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pedido">
+      <EntityTypeMapping TypeName="clastechTesteModel.pedido">
+        <MappingFragment StoreEntitySet="pedido">
+          <ScalarProperty Name="ativo" ColumnName="ativo" />
+          <ScalarProperty Name="dataPedido" ColumnName="dataPedido" />
+          <ScalarProperty Name="valorTotal" ColumnName="valorTotal" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pedidoItem">
+      <EntityTypeMapping TypeName="clastechTesteModel.pedidoItem">
+        <MappingFragment StoreEntitySet="pedidoItem">
+          <ScalarProperty Name="ativo" ColumnName="ativo" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="produtoId" ColumnName="produtoId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
