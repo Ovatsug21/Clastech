@@ -3,6 +3,7 @@ using ClasTech.Teste.Models;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,8 +70,7 @@ namespace ClasTech.Teste.Service
             {
                 using (var db = new clastechTesteEntities())
                 {
-                    var list = (from t in db.pedido
-                                // where ( max t.valorTotal )
+                    var list = (from t in db.pedido.OrderByDescending(t => t.valorTotal).Take(1)
                                 select new PedidoViewModel
                                 {
                                     Id = t.id,
@@ -80,6 +80,7 @@ namespace ClasTech.Teste.Service
                                     DataPedido = t.dataPedido,
                                     Ativo = t.ativo
                                 }).ToList();
+
                     return list;
                 }
             }

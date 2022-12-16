@@ -14,7 +14,7 @@ namespace ClasTech.Teste.Controllers
             var pedidoItemService = new PedidoItemService();
             var pedidoService = new PedidoService();
 
-            var listaPedido = pedidoService.GetPedidosAno();
+            var listaPedido = pedidoService.GetPedidoMaiorValor();
             var ListaPedidoItem = pedidoItemService.GetPedidoItemValor();
 
             ViewBag.ListaPedido = listaPedido;
